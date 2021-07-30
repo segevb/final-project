@@ -110,7 +110,6 @@ def test_sorted(single_string):
             continue
         else:
             print("string is not sorted alfabeteclly")
-            return
     print("string is sorted")
 
 

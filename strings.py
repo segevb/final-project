@@ -17,18 +17,24 @@ def no_duplicates(a_string):
     return my_list
 
 
+print(no_duplicates("segevsegev"))
+
+
 def reversed_words(a_string):
-    string = "segev"
-    reverse = (string[::-1])
+    reverse = (a_string[::-1])
     return reverse
 
 
+print(reversed_words("segev is the king"))
+
 
 def four_char_strings(a_string):
-    string_list = 'this is the sentence of segev'
     n = 4
-    string_return = ([string_list[i:i+n] for i in range(0, len(string_list), n)])
+    string_return = ([a_string[i:i+n] for i in range(0, len(a_string), n)])
     return string_return
+
+
+print(four_char_strings("this is the sentence of segev"))
 
 
 def test_no_duplicates():
@@ -46,16 +52,9 @@ def test_four_char_strings():
     assert four_char_strings(s) == ['mont', 'y py', 'thon', 's fl', 'ying', ' cir', 'cus']
 
 
-print(no_duplicates("segevsegev"))
-
-
-
 # def main():
 #     return pytest.main(__file__)
 #
 #
 # if __name__ == '__main__':
 #     main()
-
-
-
