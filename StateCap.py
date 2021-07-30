@@ -118,7 +118,14 @@ test_sorted(states_capitals_string())
 
 
 def get_state(capital):
-    pass
+
+    for state, value in STATES_CAPITALS.items():
+        if capital == value:
+            print(f"{capital} is the capital of {state}")
+
+
+capital = input("please enter captial: ")
+get_state(capital)
 
 
 def test_state_to_capital():
