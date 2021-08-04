@@ -79,14 +79,14 @@ def all_states():
     return STATES_CAPITALS.keys()
 
 
-print(all_states())
+print(list(all_states()))
 
 
 def all_capitals():
     return STATES_CAPITALS.values()
 
 
-print(all_capitals())
+print(list(all_capitals()))
 
 
 def states_capitals_string():
