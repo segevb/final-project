@@ -72,21 +72,21 @@ def capital_of_Idaho():
     return STATES_CAPITALS['Idaho']
 
 
-print(capital_of_Idaho())
+print("\n", capital_of_Idaho())
 
 
 def all_states():
     return STATES_CAPITALS.keys()
 
 
-print(list(all_states()))
+print("\n", list(all_states()))
 
 
 def all_capitals():
     return STATES_CAPITALS.values()
 
 
-print(list(all_capitals()))
+print("\n", list(all_capitals()))
 
 
 def states_capitals_string():
@@ -96,7 +96,7 @@ def states_capitals_string():
     return single_string[:-2]
 
 
-print(states_capitals_string())
+print("\n", states_capitals_string())
 
 
 def test_sorted(single_string):
@@ -109,8 +109,8 @@ def test_sorted(single_string):
         if states[index] < states[index + 1]:
             continue
         else:
-            print("string is not sorted alfabeteclly")
-    print("string is sorted")
+            print("\n", "string is not sorted alfabeteclly")
+    print("\n", "string is sorted")
 
 
 test_sorted(states_capitals_string())
@@ -120,9 +120,10 @@ def get_state(capital):
 
     for state, value in STATES_CAPITALS.items():
         if capital == value:
-            print(f"{capital} is the capital of {state}")
+            print("\n", f"{capital} is the capital of {state}")
 
 
+print("\n")
 capital = input("please enter captial: ")
 get_state(capital)
 
