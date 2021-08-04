@@ -9,11 +9,10 @@ is it in?
 Implement the function def get_state(capital): below so it returns the state.
 GOTCHAS: What happens if two states have the same capital name, how do you
 handle that?
-
 """
 import sys
 
-import pytest
+# import pytest
 
 STATES_CAPITALS = {
     'Alabama' : 'Montgomery',
@@ -70,26 +69,63 @@ STATES_CAPITALS = {
 
 
 def capital_of_Idaho():
-    # Your code here
-    pass
+    return STATES_CAPITALS['Idaho']
+
+
+print("\n", capital_of_Idaho())
+
 
 def all_states():
-    # Your code here
-    pass
+    return STATES_CAPITALS.keys()
+
+
+print("\n", list(all_states()))
+
 
 def all_capitals():
-    # Your code here
-    pass
+    return STATES_CAPITALS.values()
+
+
+print("\n", list(all_capitals()))
+
 
 def states_capitals_string():
-    # Your code here
-    pass
+    single_string = ""
+    for key, value in STATES_CAPITALS.items():
+        single_string += key + " -> " + value + ", "
+    return single_string[:-2]
 
+
+print("\n", states_capitals_string())
+
+
+def test_sorted(single_string):
+    dict1 = {}
+    for state_pair in single_string.split(", "):
+        members = state_pair.split(" -> ")
+        dict1.update({members[0]: members[1]})
+    states = list(dict1.keys())
+    for index in range(len(states) - 1):
+        if states[index] < states[index + 1]:
+            continue
+        else:
+            print("\n", "string is not sorted alfabeteclly")
+    print("\n", "string is sorted")
+
+
+test_sorted(states_capitals_string())
 
 
 def get_state(capital):
-    pass
 
+    for state, value in STATES_CAPITALS.items():
+        if capital == value:
+            print("\n", f"{capital} is the capital of {state}")
+
+
+print("\n")
+capital = input("please enter captial: ")
+get_state(capital)
 
 
 def test_state_to_capital():
@@ -110,9 +146,9 @@ def test_capital_to_state_unknown():
         get_state('')
 
 
-def main():
-    return pytest.main(__file__)
+# def main():
+#     return pytest.main(__file__)
 
 
-if __name__ == '__main__':
-    sys.exit(main())
+# if __name__ == '__main__':
+#     sys.exit(main())
